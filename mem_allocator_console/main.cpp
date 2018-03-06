@@ -11,10 +11,10 @@ int wmain(int argc, wchar_t *argv[], wchar_t *envp[]) {
 	setlocale(LC_ALL, "");
 	setvbuf(stdout, NULL, _IONBF, 0);
 
-	//if (check_windows_support::is_ok()) 
+	if (check_windows_support::is_ok()) 
 	{
 		memory_allocator::MemAllocator testbed; // activate testbed
-		//if (testbed.is_ok(MEM_ALLOCATOR_RESOURCE, MEM_ALLOCATOR_SYS_FILE, MEM_ALLOCATOR_SERVNAME_APP, MEM_ALLOCATOR_LINKNAME_APP)) 
+		if (testbed.is_ok(MEM_ALLOCATOR_RESOURCE, MEM_ALLOCATOR_SYS_FILE, MEM_ALLOCATOR_SERVNAME_APP, MEM_ALLOCATOR_LINKNAME_APP)) 
 		{
 			memory_allocator::init_input_commands();
 			do {
